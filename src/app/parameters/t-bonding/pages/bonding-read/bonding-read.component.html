@@ -1,0 +1,51 @@
+<div class="grid" *ngIf="bonding" >
+    <div class="col mt-2" >
+        <p-card header="List of bonding" >
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="New" 
+                            icon="pi pi-plus" 
+                            class="p-button-success p-mr-2"
+                            routerLink="/parameters/bonding/bonding-create">
+                    </button>
+                </ng-template>
+            </p-toolbar>
+        
+        
+                <p-table [value]="bonding">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-bonding>
+                        <tr>
+                            <td>{{bonding.id}}</td>
+                            <td>{{bonding.nombre}}</td>
+                            <td>
+                                <button pButton pRipple icon="pi pi-pencil" 
+                                        class="p-button-rounded p-button-success p-mr-2"
+                                        style="margin-right: 5px;"
+                                        type="button"
+                                        [routerLink]="['/parameters/bonding/bonding-update', bonding.id]" 
+                                        >
+                                </button>
+                                <button pButton pRipple icon="pi pi-trash" 
+                                        class="p-button-rounded p-button-warning"
+                                        type="button"
+                                        [routerLink]="['/parameters/bonding/bonding-delete', bonding.id]" 
+                                        >
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+        </p-card>
+    </div>   
+</div>
+    
+
+<router-outlet></router-outlet>
+

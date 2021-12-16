@@ -1,0 +1,51 @@
+<div class="grid" *ngIf="state" >
+    <div class="col mt-2" >
+        <p-card header="List of status" >
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="New" 
+                            icon="pi pi-plus" 
+                            class="p-button-success p-mr-2"
+                            routerLink="/parameters/status/state-create">
+                    </button>
+                </ng-template>
+            </p-toolbar>
+        
+        
+                <p-table [value]="state">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-state>
+                        <tr>
+                            <td>{{state.id}}</td>
+                            <td>{{state.nombre}}</td>
+                            <td>
+                                <button pButton pRipple icon="pi pi-pencil" 
+                                        class="p-button-rounded p-button-success p-mr-2"
+                                        style="margin-right: 5px;"
+                                        type="button"
+                                        [routerLink]="['/parameters/status/state-update', state.id]" 
+                                        >
+                                </button>
+                                <button pButton pRipple icon="pi pi-trash" 
+                                        class="p-button-rounded p-button-warning"
+                                        type="button"
+                                        [routerLink]="['/parameters/status/state-delete', state.id]" 
+                                        >
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+        </p-card>
+    </div>   
+</div>
+    
+
+<router-outlet></router-outlet>
+

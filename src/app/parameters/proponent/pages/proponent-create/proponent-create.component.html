@@ -1,0 +1,105 @@
+<div class="grid" >
+    <div class="col mt-2" >
+        <p-card>
+
+            <form [formGroup]="miFormulario" 
+            class="login100-form" 
+            autocomplete="off"
+            class="text-layout mt-2">
+            
+            <div class="p-fluid p-formgrid grid text-layout">
+              <div class="p-field col-12 md:col-6">
+                  <label> Documento </label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="documento"> 
+              </div>
+              <div class="p-field col-12 md:col-6">
+                  <label >Primer Nombre</label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="primer_nombre"> 
+              </div>
+              <div class="p-field col-12 md:col-6">
+                  <label >Otros Nombres</label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="otros_nombres"> 
+              </div>
+              
+              <div class="p-field col-12 md:col-6">
+                  <label>Primero Apellido</label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="primer_apellido"> 
+              </div>
+              
+              <div class="p-field col-12 md:col-6">
+                  <label>Segundo Apellido</label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="segundo_apellido"> 
+              </div>
+
+              <div class="p-field col-12 md:col-6">
+                  <label>Correo</label>
+                  <input type="email" 
+                         pInputText
+                         formControlName="correo"> 
+              </div>
+
+              <div class="p-field col-12 md:col-6">
+                  <label>Celular</label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="celular"> 
+              </div>
+
+              <div class="row mb-3" >
+                <div class="col" >
+                    <label class="form-label">tipo de vinculacion</label>
+                    <select class="form-control"
+                            formControlName="idtipovinculacion">
+                        <option value=""> --Choose type bonding-- </option>
+                        <option *ngFor="let tipo of tipoVinculacion"
+                                [value]="tipo.id"> {{tipo.nombre}} </option>
+                    </select>
+                </div>
+            </div>
+              <!-- <div class="p-field col-12 md:col-6">
+                  <label for="rol">Rol</label>
+                  <p-dropdown inputId="rol" 
+                              placeholder="Select" 
+                              optionLabel="name">
+                  </p-dropdown>
+              </div> -->
+              <div class="p-field col-12 ">
+            
+                  <button pButton type="button"
+                          icon="pi pi-check "
+                          label="Create" 
+                          class="p-button-outlined p-button-success"
+                          (click)="crear()"
+                          type="button">
+                  </button>
+            
+              </div>
+            
+            </div>
+            </form>
+        </p-card>
+    </div>
+</div> 
+
+
+
+
+<!-- <p-card>
+    <ng-template pTemplate="header">
+        Header content here
+    </ng-template>
+    Body Content
+    <ng-template pTemplate="footer">
+        Footer content here
+    </ng-template>
+</p-card> -->

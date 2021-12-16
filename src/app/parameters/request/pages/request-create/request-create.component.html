@@ -1,0 +1,111 @@
+<div class="grid" >
+    <div class="col mt-2" >
+        <p-card header="Create New request" >
+
+            <form [formGroup]="miFormulario" 
+            class="text-layout mt-2">
+            
+            <div class="p-fluid p-formgrid grid text-layout">
+              <div class="p-field col-12 md:col-6">
+                  <label> Name </label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="nombre"> 
+              </div>
+              <div class="p-field col-12 md:col-6">
+                  <label> Filing Date </label>
+                  <input type="date" 
+                         pInputText
+                         formControlName="fecha_radicado"> 
+              </div>
+              <div class="p-field col-12 md:col-6">
+                  <label> Description </label>
+                  <input type="text" 
+                         pInputText
+                         formControlName="descripcion"> 
+              </div>
+              <div class="p-field col-12 md:col-6">
+                  <label> Doc </label>
+                  <input type="text" 
+                         pInputText>
+                         <!-- formControlName="trabajo">  -->
+              </div>
+              <div class="p-field col-12 md:col-3">
+                <label class="form-label">T-Request</label>
+                <select class="form-control"
+                        formControlName="idtiposolicitud">
+                    <option value=""> --Choose T-Request-- </option>
+                    <option *ngFor="let tipo of trequest"
+                            [value]="tipo.id"> {{tipo.nombre}} </option>
+                </select>
+              </div>
+              <div class="p-field col-12 md:col-3">
+                <label class="form-label">Modality</label>
+                <select class="form-control"
+                        formControlName="idmodalidad">
+                    <option value=""> --Choose Modality-- </option>
+                    <option *ngFor="let tipo of modality"
+                            [value]="tipo.id"> {{tipo.nombre}} </option>
+                </select>
+              </div>
+              <div class="p-field col-12 md:col-3">
+                <label class="form-label">Status</label>
+                <select class="form-control"
+                        formControlName="idestado">
+                    <option value=""> --Choose Status-- </option>
+                    <option *ngFor="let tipo of status"
+                            [value]="tipo.id"> {{tipo.nombre}} </option>
+                </select>
+              </div>
+              <div class="p-field col-12 md:col-3">
+                <label class="form-label">Area Investigation</label>
+                <select class="form-control"
+                        formControlName="idareainvestigacion">
+                    <option value=""> --Choose A-investigation-- </option>
+                    <option *ngFor="let tipo of area"
+                            [value]="tipo.id"> {{tipo.nombre}} </option>
+                </select>
+              </div>
+            </div>
+            <div class="p-fluid p-formgrid grid text-layout">
+                <div class="p-field col-12 md:col-12">
+                    <div class="grid mt-2 " >
+
+                        <div class="p-field col-12 md:col-6">
+                            <form [formGroup]="documentForm">
+                              <input class="btn orange" type="file" (change)="UploadDocument($event)" 
+                                 name="document" formControlName="trabajo"  /> 
+                              &nbsp;<button class="btn btn-success " type="button" (click)="SubmitFileToServer()" > Cargar Documento</button>
+                          
+                                </form>
+                           </div>
+
+                        <div class="p-field col-12 md:col-6 ">
+            
+                            <button pButton type="button"
+                                    icon="pi pi-check "
+                                    label="Create" 
+                                    class="p-button-outlined p-button-success"
+                                    (click)="createRequest()"
+                                    [disabled]="miFormulario.invalid"
+                                    type="button">
+                            </button>
+                        </div>
+                        <div class="p-field col-12 md:col-6 ">
+                        
+                            <button pButton type="button"
+                                    icon="pi pi-times "
+                                    label="Cancel" 
+                                    class="p-button-outlined p-button-danger"
+                                    routerLink="/parameters/requests/request-read"
+                                    type="button">
+                            </button>
+                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </p-card>
+    </div>
+</div> 

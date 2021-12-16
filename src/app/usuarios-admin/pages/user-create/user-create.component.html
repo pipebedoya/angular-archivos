@@ -1,0 +1,95 @@
+<div class="grid" >
+    <div class="col-12" >
+        <div *ngIf="bandera" >
+              <div class="d-flex justify-content-center">
+                <div class="spinner-grow text-danger" role="status">
+                    <span class="sr-only"></span>
+                  </div>
+                  <div class="spinner-grow text-warning" role="status">
+                    <span class="sr-only"></span>
+                  </div>
+                  <div class="spinner-grow text-info" role="status">
+                    <span class="sr-only"></span>
+                  </div>
+                <div class="text-primary" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
+              </div>
+              
+        </div>
+        
+    </div>
+</div>
+
+<div class="grid" >
+    <div class="col mt-2" >
+        <p-card header="Create New User" >
+            <form [formGroup]="miFormulario" 
+                  class="login100-form" 
+                  autocomplete="off"
+                  class="text-layout">
+      
+      <div class="p-fluid p-formgrid grid text-layout">
+        <div class="p-field col-12 md:col-6">
+            <label> Firstname</label>
+            <input type="text" 
+                   pInputText
+                   formControlName="nombre"> 
+        </div>
+        <div class="p-field col-12 md:col-6">
+            <label >Lastname</label>
+            <input type="text" 
+                   pInputText
+                   formControlName="apellido"> 
+        </div>
+        <div class="p-field col-12 md:col-6">
+            <label >Email</label>
+            <input type="email" 
+                   pInputText
+                   formControlName="correo"> 
+        </div>
+        
+        <div class="p-field col-12 md:col-6">
+            <label>Phone</label>
+            <input type="text" 
+                   pInputText
+                   formControlName="celular"> 
+        </div>
+        <!-- <div class="p-field col-12 md:col-6">
+            <label for="rol">Rol</label>
+            <p-dropdown inputId="rol" 
+                        placeholder="Select" 
+                        optionLabel="name">
+            </p-dropdown>
+        </div> -->
+        <div class="p-field col-6 ">
+
+            <button pButton type="button"
+                    icon="pi pi-check "
+                    label="Create" 
+                    class="p-button-outlined p-button-success"
+                    (click)="createUser()"
+                    type="button"
+                    [disabled]="miFormulario.invalid">
+            </button>
+
+        </div>
+        <div class="p-field col-6 ">
+
+            <button pButton type="button"
+                    icon="pi pi-times "
+                    label="Cancel" 
+                    class="p-button-outlined p-button-danger"
+                    routerLink="/usuarios/user-read"
+                    type="button">
+            </button>
+
+        </div>
+
+    </div>
+</form>
+
+        </p-card>
+    </div>
+</div>
+

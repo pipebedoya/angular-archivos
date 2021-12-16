@@ -1,0 +1,59 @@
+<div class="grid" *ngIf="request" >
+    <div class="col mt-2" >
+        <p-card header="List of requests" >
+            <!-- <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="New" 
+                            icon="pi pi-plus" 
+                            class="p-button-success p-mr-2"
+                            routerLink="/parameters/requests/request-create">
+                    </button>
+                </ng-template>
+            </p-toolbar> -->
+        
+        
+                <p-table [value]="request">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Type Request</th>
+                            <th>Modality</th>
+                            <th>Area</th>
+                            <th>Request</th>
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-request>
+                        <tr>
+                            <td>{{request.nombre_trabajo}}</td>
+                            <td>{{request.fecha_radicado | date }}</td>
+                            <td>{{request.idtiposolicitud.nombre }}</td>
+                            <td>{{request.idmodalidad.nombre }}</td>
+                            <td>{{request.idareainvestigacion.nombre }}</td>
+                            <td>{{request.trabajo }}</td>
+                            <td>
+                                <button pButton pRipple icon="pi pi-pencil" 
+                                        class="p-button-rounded p-button-success p-mr-2"
+                                        style="margin-right: 5px;"
+                                        type="button"
+                                        [routerLink]="['/parameters/requests/request-update', request.id]" 
+                                        >
+                                </button>
+                                <button pButton pRipple icon="pi pi-trash" 
+                                        class="p-button-rounded p-button-warning"
+                                        type="button"
+                                        [routerLink]="['/parameters/requests/request-delete', request.id]" 
+                                        >
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+        </p-card>
+    </div>   
+</div>
+    
+
+<router-outlet></router-outlet>
+

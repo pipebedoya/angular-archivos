@@ -1,0 +1,129 @@
+<div class="grid" >
+        <div class="col mt-2 " >
+
+        
+        <p-menubar [model]="items" st >
+        
+                <button pButton label="Faculty"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/faculties"
+                        >
+                </button>
+                <button pButton label="Department"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/departaments"
+                        >
+                </button>
+                <button pButton label="T-Bonding"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/bonding"
+                        >
+                </button>
+                <button pButton label="T-Request"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/types-requests"
+                        >
+                </button>
+                <button pButton label="T-Committee"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/committees"
+                        >
+                </button>
+                <button pButton label="I-Area"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/investigation"
+                        >
+                </button>
+                <button pButton label="Modality"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/modalities"
+                        >
+                </button>
+                <button pButton label="Status"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/status"
+                        >
+                </button>
+                <button pButton label="Request"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/requests"
+                        >
+                </button>
+                <button pButton label="Proponent"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/proponents"
+                        >
+                </button>
+                <button pButton label="Juries"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/parameters/juries">
+                        >
+                </button>
+                <button pButton label="Users"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-user"
+                        style="margin-right: 5px;"
+                        routerLink="/usuarios/user-read">
+                </button>
+                <button pButton label="Logout"
+                        class="p-button-sm mt-2"
+                        icon="pi pi-power-off"
+                        (click)="logout()">
+                </button>
+        </p-menubar>
+</div>
+</div>
+
+<div class="p-mt-22" >
+        <p-menubar class="mt-2">
+                <p-tag value="Binvenido: {{usuario.data?.nombre}}  " icon="pi pi-user">
+                
+                </p-tag>
+        
+        </p-menubar>
+
+</div>
+<router-outlet></router-outlet>
+<!-- <div class="text-layout" >
+        <pre> {{ usuario | json }} </pre>
+
+</div> -->
+   
+
+
+<!--     
+<hr>
+
+<p>
+    pagina de autorizados
+</p>
+
+<h4>User info</h4>
+
+<pre> {{usuario | json}} </pre>
+ -->
+<!-- <button (click)="logout()" >Logout</button>
+ -->
+    <!-- <app-change-pass></app-change-pass> -->

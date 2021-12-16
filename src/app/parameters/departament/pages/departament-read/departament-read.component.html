@@ -1,0 +1,53 @@
+<div class="grid" *ngIf="departament" >
+    <div class="col mt-2" >
+        <p-card header="List of departaments" >
+            <p-toolbar styleClass="p-mb-4">
+                <ng-template pTemplate="left">
+                    <button pButton pRipple label="New" 
+                            icon="pi pi-plus" 
+                            class="p-button-success p-mr-2"
+                            routerLink="/parameters/departaments/departament-create">
+                    </button>
+                </ng-template>
+            </p-toolbar>
+        
+        
+                <p-table [value]="departament">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>id</th>
+                            <th>Name</th>
+                            <th>Faculty</th>
+                            <th>Actions</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-departament>
+                        <tr>
+                            <td>{{departament.id}}</td>
+                            <td>{{departament.nombre}}</td>
+                            <td>{{departament.idfacultad?.nombre}}</td>
+                            <td>
+                                <button pButton pRipple icon="pi pi-pencil" 
+                                        class="p-button-rounded p-button-success p-mr-2"
+                                        style="margin-right: 5px;"
+                                        type="button"
+                                        [routerLink]="['/parameters/departaments/departament-update', departament.id]" 
+                                        >
+                                </button>
+                                <button pButton pRipple icon="pi pi-trash" 
+                                        class="p-button-rounded p-button-warning"
+                                        type="button"
+                                        [routerLink]="['/parameters/departaments/departament-delete', departament.id]" 
+                                        >
+                                </button>
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+        </p-card>
+    </div>   
+</div>
+    
+
+<router-outlet></router-outlet>
+
